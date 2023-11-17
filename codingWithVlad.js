@@ -112,11 +112,21 @@ const obj4 = { firstName: "Filo", age: 28 };
 
 // whoIsOlder(obj1, obj3);
 
+// function whoIsOlder(param1, param2) {
+//   console.log(
+//     `${param1.firstName} is ${
+//       param1.age > param2.age ? "" : "not "
+//     }older than ${param2.firstName}`
+//   );
+// }
+// whoIsOlder(obj3, obj4);
+
 function whoIsOlder(param1, param2) {
-  console.log(
-    `${param1.firstName} is ${
-      param1.age > param2.age ? "" : "not "
-    }older than ${param2.firstName}`
-  );
+  const { older, younger } =
+    param1.age > param2.age
+      ? { older: param1, younger: param2 }
+      : { older: param2, younger: param1 };
+  console.log(`${older.firstName} is older than ${younger.firstName}`);
 }
-whoIsOlder(obj3, obj4);
+
+whoIsOlder(obj2, obj4);
