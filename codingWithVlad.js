@@ -87,3 +87,36 @@ function dumbSumArray(array) {
 }
 let sumTot = dumbSumArray(array);
 console.log("***sumTot 👉", sumTot);
+
+const obj1 = { firstName: "Elvis", age: 25 };
+const obj2 = { firstName: "Vlad", age: 32 };
+const obj3 = { firstName: "Florin", age: 22 };
+const obj4 = { firstName: "Filo", age: 28 };
+
+// function whoIsOlder(param1, param2) {
+//   if (param1.age > param2.age) {
+//     console.log(`${param1.firstName} is older than ${param2.firstName}`);
+//   } else {
+//     console.log(`${param2.firstName} is older than ${param1.firstName}`);
+//   }
+// }
+// whoIsOlder(obj2, obj4);
+
+// function whoIsOlder(param1, param2) {
+//   console.log(
+//     param1.age > param2.age
+//       ? `${param1.firstName} is older than ${param2.firstName}`
+//       : `${param2.firstName} is older than ${param1.firstName}`
+//   );
+// }
+
+// whoIsOlder(obj1, obj3);
+
+function whoIsOlder(param1, param2) {
+  console.log(
+    `${param1.firstName} is ${
+      param1.age > param2.age ? "" : "not "
+    }older than ${param2.firstName}`
+  );
+}
+whoIsOlder(obj3, obj4);

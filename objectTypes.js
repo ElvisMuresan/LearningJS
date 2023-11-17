@@ -73,8 +73,8 @@ let x1 = {
 //let y = 10
 
 //let y = { ...x1 };
-//let y = Object.assign({}, x1)
-let y = JSON.parse(JSON.stringify(x1));
+let y = Object.assign({}, x1);
+//let y = JSON.parse(JSON.stringify(x1));
 y.number = 20;
 y.bla.car = 25;
 
