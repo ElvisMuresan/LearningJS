@@ -67,10 +67,14 @@ array.map((cursor) => {
 });
 
 function sumArray(array) {
-  for (index = 0; index <= array.length; index++) {
-    let sum = array[index];
+  let sum = 0;
+  for (index = 0; index < array.length; index++) {
+    sum += array[index];
   }
+  return sum;
 }
+const result = sumArray([1, 2, 3, 4]);
+console.log(result);
 
 function dumbSumArray(array) {
   let sum =
