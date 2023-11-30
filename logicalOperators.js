@@ -58,3 +58,7 @@ console.log(score || "no score registered");
 let score1 = 0;
 
 console.log(score1 ?? "no score registered");
+
+//EX 11
+let a10 = undefined;
+console.log(88 && 33 && "" && a10);

@@ -223,3 +223,30 @@ class SmallestIntegerFinder {
 const finder1 = new SmallestIntegerFinder();
 const result6 = finder1.findSmallestInt([102, -2232, 333, -433, -55]);
 console.log(result6);
+
+//EX10
+// Can you find the needle in the haystack?
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+// After your function finds the needle it should return a message (as a string) that says:
+// "found the needle at position " plus the index it found the needle, so:
+// Example(Input --> Output)
+// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
+// Note: In COBOL, it should return "found the needle at position 6"
+
+function findNeedle(haystack) {
+  let needleWord = "";
+  let position = undefined;
+  for (let i = 0; i <= haystack.length; i++) {
+    needleWord = haystack[i] === "needle" ? haystack[i] : needleWord;
+  }
+  position = haystack.indexOf("needle");
+  return `found the needle at position ${position}`;
+}
+const result7 = findNeedle([
+  "elvis",
+  "muresan",
+  "barcelona",
+  "needle",
+  "madrid",
+]);
+console.log(result7);
