@@ -89,3 +89,33 @@ function changeElvis(innerElvis) {
 
 changeElvis(elvis);
 console.log("*** elvis👉", elvis);
+
+//Exercise 1
+const car = new Object();
+car.color = "blue";
+car.type = "Mercedes";
+car.ageBirth = 2008;
+console.log(car);
+//Output:{color: 'blue', type: 'Mercedes', ageBirth: 2008}
+//Score: 100%
+
+//Exercise 2
+const car2 = { color: "blue", ageBirth: 2008, model: "audi" };
+console.log(car2);
+//Output: {color: "blue", ageBirth: 2008, model: "audi"}
+//Score: 100%
+
+//Exercise 3
+function Car() {
+  this.color = "blue";
+  this.ageBirth = 2008;
+  this.model = "audi";
+}
+
+const car3 = new Car();
+const car4 = new Car();
+console.log(car3);
+console.log(car4);
+//Output for car1:{color: "blue", ageBirth: 2008, model: "audi"}
+//Output for car2:{color: "blue", ageBirth: 2008, model: "audi"}
+//Score: 100%
