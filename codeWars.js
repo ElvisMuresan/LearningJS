@@ -257,3 +257,85 @@ console.log(result7);
 // Your task is to write a function that takes a string and return a new string with all vowels removed.
 // For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 // Note: for this kata y isn't considered a vowel.
+
+//V1
+function removeAllVowels(str) {
+  let stringWithoutWowels = "";
+  for (let i = 0; i < str.length; i++) {
+    if (
+      str[i] !== "e" &&
+      str[i] !== "E" &&
+      str[i] !== "i" &&
+      str[i] !== "I" &&
+      str[i] !== "o" &&
+      str[i] !== "O" &&
+      str[i] !== "u" &&
+      str[i] !== "U"
+    ) {
+      stringWithoutWowels += str[i];
+    }
+  }
+  return stringWithoutWowels;
+}
+
+const result11 = removeAllVowels("uKiEoqjgiJ Srx FihziIafFrYViqOFNE");
+console.log(result11);
+
+//V2
+function disemvowel(str) {
+  let newStr = str.replace(/[aeiouAEIOU]/g, "");
+  return newStr;
+}
+
+const result12 = disemvowel("elvis");
+console.log(result12);
+
+//EX12
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+// Examples
+// makeNegative(1);    // return -1
+// makeNegative(-5);   // return -5
+// makeNegative(0);    // return 0
+// makeNegative(0.12); // return -0.12
+// Notes
+// The number can be negative already, in which case no change is required.
+// Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
+
+//V1
+function makeNegative(num) {
+  if (Math.sign(num) === 1) {
+    num = -num;
+  }
+  return num;
+}
+
+const result13 = makeNegative(-1);
+console.log(result13);
+
+//V2
+function makeNegative(num) {
+  return num < 0 ? num : -num;
+}
+
+const res = makeNegative(-1);
+console.log(res);
+
+//EX13
+// Make a program that filters a list of strings and returns a list with only your friends name in it.
+// If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+// Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
+// i.e.
+// friend ["Ryan", "Kieran", "Mark"] `shouldBe` ["Ryan", "Mark"]
+// Note: keep the original order of the names in the output.
+
+function friend(friends) {
+  let friendsOfMine = [];
+  for (let i = 0; i < friends.length; i++) {
+    if (friends[i].length === 4) {
+      friendsOfMine.push(friends[i]);
+    }
+  }
+  return friendsOfMine;
+}
+const rezultat = friend(["elvis", "miha", "vlad", "filo", "florin"]);
+console.log(rezultat);
