@@ -339,3 +339,50 @@ function friend(friends) {
 }
 const rezultat = friend(["elvis", "miha", "vlad", "filo", "florin"]);
 console.log(rezultat);
+
+//EX14
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+// Example: (Input --> Output)
+// "Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+// isIsogram "Dermatoglyphics" = true
+// isIsogram "moose" = false
+// isIsogram "aba" = false
+
+function isIsogram(str) {
+  const lowercasedStr = str.toLowerCase();
+
+  for (let i = 0; i < lowercasedStr.length; i++) {
+    for (let j = i + 1; j < lowercasedStr.length; j++) {
+      if (lowercasedStr[i] === lowercasedStr[j]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+const result111 = isIsogram("Dermatoglyphics");
+console.log(result111);
+
+//EX15
+// Implement a function which convert the given boolean value into its string representation.
+// Note: Only valid inputs will be given.
+
+function booleanToString(b) {
+  let convert = b.toString();
+  return convert;
+}
+
+const result112 = booleanToString(false);
+console.log(result112);
+
+//EX16
+// Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+// (In this case, all triangles must have surface greater than 0 to be accepted).
+
+function isTriangle(a, b, c) {
+  return a + b > c && a + c > b && b + c > a;
+}
+
+const result113 = isTriangle(3, 4, 5);
+console.log(result113);
