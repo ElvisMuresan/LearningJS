@@ -113,9 +113,9 @@ function Car() {
 }
 
 const car3 = new Car();
-const car4 = new Car();
+const car5 = new Car();
 console.log(car3);
-console.log(car4);
-//Output for car1:{color: "blue", ageBirth: 2008, model: "audi"}
-//Output for car2:{color: "blue", ageBirth: 2008, model: "audi"}
+console.log(car5);
+//Output for car3:{color: "blue", ageBirth: 2008, model: "audi"}
+//Output for car5:{color: "blue", ageBirth: 2008, model: "audi"}
 //Score: 100%

@@ -134,3 +134,16 @@ function whoIsOlder(param1, param2) {
 }
 
 whoIsOlder(obj2, obj4);
+
+//02.12.2023
+function isElementInArray(array, element) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === element) {
+      return true;
+    }
+  }
+  return false;
+}
+
+const result10 = isElementInArray([1, 3, 4, 5], 3);
+console.log(result10);
