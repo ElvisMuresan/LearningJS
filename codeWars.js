@@ -386,3 +386,132 @@ function isTriangle(a, b, c) {
 
 const result113 = isTriangle(3, 4, 5);
 console.log(result113);
+
+//EX17
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+// #Examples:
+// Kata.getMiddle("test") should return "es"
+// Kata.getMiddle("testing") should return "t"
+// Kata.getMiddle("middle") should return "dd"
+// Kata.getMiddle("A") should return "A"
+// #Input
+// A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+// #Output
+// The middle character(s) of the word represented as a string.
+
+function getMiddle(s) {
+  if (s.length % 2 === 0) {
+    let evenString = s[s.length / 2 - 1] + s[s.length / 2];
+    return evenString;
+  } else {
+    let oddString = s[Math.floor(s.length / 2)];
+    return oddString;
+  }
+}
+
+const rezultatul = getMiddle("elvisee");
+console.log(rezultatul);
+
+//EX18
+//This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+//V1
+function simpleMultiplication(number) {
+  if (number % 2 === 0) {
+    number = number * 8;
+    return number;
+  } else {
+    number = number * 9;
+    return number;
+  }
+}
+const result123 = simpleMultiplication(9);
+console.log(result123);
+
+//V2
+function simpleMultiplication(number) {
+  return number % 2 === 0 ? number * 8 : number * 9;
+}
+const result121 = simpleMultiplication(6);
+console.log(result121);
+
+//EX20
+// Complete the solution so that it reverses the string passed into it.
+// 'world'  =>  'dlrow'
+// 'word'   =>  'drow'
+
+function solution(str) {
+  return str.split("").reverse().join("");
+}
+const solutie = solution("abc");
+console.log(solutie);
+
+//EX21
+// Note: This kata is inspired by Convert a Number to a String!. Try that one too.
+// Description
+// We need a function that can transform a string into a number. What ways of achieving this do you know?
+// Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+// Examples
+// "1234" --> 1234
+// "605"  --> 605
+// "1405" --> 1405
+// "-7" --> -7
+
+const stringToNumber = function (str) {
+  return Number(str);
+};
+
+const solution = stringToNumber("5");
+console.log(solution);
+
+//EX22
+// You get an array of numbers, return the sum of all of the positives ones.
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+// Note: if there is nothing to sum, the sum is default to 0.
+
+function positiveSum(arr) {
+  let sum = 0;
+  for (let index = 0; index < arr.length; index++) {
+    if (arr[index] > 0) {
+      sum += arr[index];
+    }
+  }
+  return sum;
+}
+const result222 = positiveSum([-1, 2, -3, 4, -5]);
+console.log(result222);
+
+//EX23
+// Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+// Examples (Input -> Output)
+// * [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+// * [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+// * [42, 54, 65, 87, 0]             -> min = 0, max = 87
+// * [5]                             -> min = 5, max = 5
+// Notes
+// You may consider that there will not be any empty arrays/vectors.
+
+var min = function (list) {
+  let minNumber = list[0];
+  for (let index = 1; index < list.length; index++) {
+    if (list[index] < minNumber) {
+      minNumber = list[index];
+    }
+  }
+  return minNumber;
+};
+
+var max = function (list) {
+  let maxNumber = list[0];
+  for (let index = 1; index < list.length; index++) {
+    if (list[index] > maxNumber) {
+      maxNumber = list[index];
+    }
+  }
+  return maxNumber;
+};
+
+const result1234 = min([1, 2, 3, 4, 5]);
+const result2234 = max([1, 2, 3, 4, 5]);
+console.log(result1234);
+console.log(result2234);
