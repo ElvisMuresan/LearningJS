@@ -65,3 +65,16 @@ const secondPerson1 = {
 const thirdPerson = { ...firstPerson, ...secondPerson };
 
 console.log(thirdPerson);
+
+//EX6
+const firstPerson2 = {
+  name: "Elvis",
+  age: 25,
+  adress: { city: "Deva", state: "Romania" },
+  favoriteFod: "pizza",
+};
+
+function printUser(user) {
+  console.log(user);
+}
+printUser(firstPerson2);
