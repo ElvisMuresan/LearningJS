@@ -68,3 +68,34 @@ function getYear() {
 getYear();
 console.log(week);
 console.log(day);
+
+//EX6 Context in JavaSript
+let drink1 = "wine";
+
+const blabla = {
+  drink1: "beer",
+  getDrink: function () {
+    return drink1;
+  },
+};
+
+console.log(blabla.getDrink());
+
+//EX 7
+let drink3 = "wine";
+
+const blabla3 = {
+  drink3: "beer",
+  getDrink: function () {
+    return this.drink3;
+  },
+  under18: {
+    drink3: "juice",
+    getDrink: function () {
+      return this.drink3;
+    },
+  },
+};
+
+console.log(blabla.getDrink());
+console.log(blabla.under18.getDrink());
