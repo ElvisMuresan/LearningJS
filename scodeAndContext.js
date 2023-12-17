@@ -99,3 +99,20 @@ const blabla3 = {
 
 console.log(blabla.getDrink());
 console.log(blabla.under18.getDrink());
+
+//EX8
+let multilineString = `This is
+                        a multiline 
+                        string with 
+                        extra space.`;
+
+let lines = multilineString.split("\n");
+console.log(lines);
+
+for (i = 0; i < lines.length; i++) {
+  lines[i] = lines[i].trimStart();
+}
+console.log(lines);
+
+let modifiedString = lines.join("\n");
+console.log(modifiedString);
