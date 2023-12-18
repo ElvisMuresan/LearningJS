@@ -78,3 +78,11 @@ function printUser(user) {
   console.log(user);
 }
 printUser(firstPerson2);
+
+//EX7
+function multiDiv({ x, y }) {
+  let a = x * y;
+  let b = x / y;
+  return { a, b };
+}
+console.log(({ a, b } = multiDiv({ x: 2, y: 4 })));

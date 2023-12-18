@@ -116,3 +116,12 @@ console.log(lines);
 
 let modifiedString = lines.join("\n");
 console.log(modifiedString);
+
+//EX9
+const arr = [1, 2, 3, 5, 6, 7, 8, 9, 10];
+
+let sum = arr.reduce((contor, index) => {
+  return contor + index;
+}, 5);
+
+console.log(sum);
