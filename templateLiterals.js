@@ -56,3 +56,48 @@ let sum = numbers.reduce((passedIn, index) => {
 }, 0);
 
 console.log(`The sum is ${sum}\n`);
+
+//EX7
+let var1 = 1;
+let var2 = 1;
+function stringPlusOne(strings) {
+  const newArray = [];
+  for (i = 0; i < strings.length; i++) {
+    const newString = strings[i] + "1";
+    newArray.push(newString);
+  }
+  return newArray;
+}
+
+const result10 = stringPlusOne`Elvis is a super${var1} hero${var2} and a presley`;
+console.log(result10);
+
+//EX8
+let var10 = null;
+let var20 = 2.5;
+let var30 = undefined;
+function test(strings, ...expressions) {
+  for (i = 0; i < expressions.length; i++) {
+    const result = expressions[i] ?? "orice";
+    console.log(result);
+  }
+}
+test`1 ${var10} 2 ${var20} 3 ${var30}`;
+
+//EX9
+const nestedObject = {
+  person: {
+    name: "John",
+    address: {
+      city: "New York",
+      zip: "10001",
+    },
+  },
+};
+
+const {
+  person: {
+    address: { zip },
+  },
+} = nestedObject;
+console.log(zip);
