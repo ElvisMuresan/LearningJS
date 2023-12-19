@@ -86,3 +86,16 @@ function multiDiv({ x, y }) {
   return { a, b };
 }
 console.log(({ a, b } = multiDiv({ x: 2, y: 4 })));
+
+//EX8
+function divizori(number) {
+  const divizoriArray = [];
+  for (i = 0; i <= number; i++) {
+    if (number % i === 0) {
+      divizoriArray.push(i);
+    }
+  }
+  return divizoriArray;
+}
+let [, , thirdElement1] = divizori(20);
+console.log(thirdElement1);
