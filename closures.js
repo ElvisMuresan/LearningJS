@@ -57,3 +57,17 @@ const add10 = makeSum(10);
 const add20 = makeSum(20);
 console.log(add10(5));
 console.log(add20(5));
+
+//EX6
+function makeSizer(size) {
+  return function () {
+    document.body.style.fontSize = size + "px";
+  };
+}
+let size10 = makeSizer(10);
+let size14 = makeSizer(14);
+let size18 = makeSizer(18);
+
+document.getElementById("size-10").onclick = size10;
+document.getElementById("size-14").onclick = size14;
+document.getElementById("size-18").onclick = size18;
