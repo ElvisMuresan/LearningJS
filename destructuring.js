@@ -99,3 +99,21 @@ function divizori(number) {
 }
 let [, , thirdElement1] = divizori(20);
 console.log(thirdElement1);
+
+//EX9
+const arrayOfObjects = [
+  { firstName: "Elvis", lastName: "Muresan", age: 25 },
+  { firstName: "Florin", lastName: "Bejera", age: 22 },
+  { firstName: "Gigel", lastName: "Frone", age: 45 },
+];
+
+for (const { firstName, lastName } of arrayOfObjects) {
+  console.log(firstName);
+  console.log(lastName);
+}
+
+for (i = 0; i < arrayOfObjects.length; i++) {
+  const { firstName, age } = arrayOfObjects[i];
+  console.log(firstName);
+  console.log(age);
+}
