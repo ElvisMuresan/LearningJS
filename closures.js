@@ -71,3 +71,24 @@ let size18 = makeSizer(18);
 document.getElementById("size-10").onclick = size10;
 document.getElementById("size-14").onclick = size14;
 document.getElementById("size-18").onclick = size18;
+
+//EX7
+let a = 10;
+function foo(b) {
+  console.log(b);
+  let c = 20;
+  function abo(d) {
+    console.log(d);
+    let f = 30;
+    return bla(a + b + c + d + f);
+  }
+
+  function bla(g) {
+    return `${g} lei`;
+  }
+
+  return abo;
+}
+
+let mda = foo(15);
+console.log(mda(25));
