@@ -205,3 +205,15 @@ bar(4);
 */
 
 //EX11
+function secretPassword() {
+  let password = "abcdefgh";
+  return {
+    guessPassword: function (guess) {
+      return guess === password;
+    },
+  };
+}
+
+const passwordEnel = secretPassword();
+console.log(passwordEnel.guessPassword("elvis"));
+console.log(passwordEnel.guessPassword("abcdefgh"));
