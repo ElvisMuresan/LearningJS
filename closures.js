@@ -92,3 +92,116 @@ function foo(b) {
 
 let mda = foo(15);
 console.log(mda(25));
+
+//EX8
+function outerFunction() {
+  let outerVariable = "I am from the outer function";
+
+  function innerFunction() {
+    let innerVariable = "I am from the inner function";
+    console.log(outerVariable);
+    console.log(innerVariable);
+  }
+  return innerFunction;
+}
+
+const innerFuncInstance1 = outerFunction();
+const innerFuncInstance2 = outerFunction();
+innerFuncInstance1(); //Creates new lexical envorenment
+innerFuncInstance2(); // Creates another new lexical envorenment
+
+//EX9
+let x1 = 10;
+
+function foo1() {
+  let y1 = 20;
+  function bar1() {
+    let z1 = 15;
+    return x1 + y1 + z1;
+  }
+  return bar1;
+}
+
+const result1 = foo1();
+console.log(result1());
+
+//Environment
+GlobalEnvironment = {
+  EnvironmentRecord: {
+    //built-in identifiers
+    Array: "<func>",
+    Object: "<func>",
+    //etc...
+
+    //custom identifiers
+    x1: 10,
+  },
+  outer: null,
+};
+
+foo1Environment = {
+  EnvironmentRecord: {
+    y1: 20,
+    bar1: "<func>",
+  },
+  outer: GlobalEnvironment,
+};
+
+bar1Environment = {
+  EnvironmentRecord: {
+    z1: 15,
+  },
+  outer: foo1Environment,
+};
+
+//EX10
+function iCantThinkOfAName(num, obj) {
+  // This array variable, along with the 2 parameters passed in,
+  // are 'captured' by the nested function 'doSomething'
+  var array = [1, 2, 3];
+  function doSomething(i) {
+    num += i;
+    array.push(num);
+    console.log("num: " + num);
+    console.log("array: " + array);
+    console.log("obj.value: " + obj.value);
+  }
+
+  return doSomething;
+}
+
+var referenceObject = { value: 10 };
+var foo = iCantThinkOfAName(2, referenceObject); // closure #1
+var bar = iCantThinkOfAName(6, referenceObject); // closure #2
+
+foo(2);
+/*
+  num: 4
+  array: 1,2,3,4
+  obj.value: 10
+*/
+
+bar(2);
+/*
+  num: 8
+  array: 1,2,3,8
+  obj.value: 10
+*/
+
+referenceObject.value++;
+
+foo(4);
+/*
+  num: 8
+  array: 1,2,3,4,8
+  obj.value: 11
+*/
+
+bar(4);
+/*
+  num: 12
+  array: 1,2,3,8,12
+  obj.value: 11
+*/
+
+//EX11
