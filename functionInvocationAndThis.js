@@ -37,3 +37,15 @@ console.log(myObject.value); // 1
 
 myObject.increment(2);
 console.log(myObject.value); // 3
+
+//EX3
+function myFunction(arg1, arg2) {
+  this.firstName = arg1;
+  this.lastName = arg2;
+}
+
+// This creates a new object
+const myObj = new myFunction("John", "Doe");
+
+// This will return "John"
+console.log(myObj.lastName);
