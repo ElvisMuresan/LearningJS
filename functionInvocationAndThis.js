@@ -49,3 +49,11 @@ const myObj = new myFunction("John", "Doe");
 
 // This will return "John"
 console.log(myObj.lastName);
+
+//EX4
+("use strict");
+function showThis() {
+  console.log(this);
+}
+
+showThis();
