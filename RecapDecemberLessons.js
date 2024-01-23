@@ -189,3 +189,18 @@ const innerFunctionInstance1 = outerFunction();
 const innerFunctionInstance2 = outerFunction();
 innerFunctionInstance1(); // Execute the innerFunction which still have access to the outerVariable
 innerFunctionInstance2();
+
+//Write a function that takes in a string as a parameter and converts it to a number inside a template literal and add 25 to it. Return the new value. (4p)
+function convertStringToNumber(string) {
+  const convertToNumber = +string;
+  console.log(convertToNumber);
+  console.log(typeof convertToNumber);
+  if (!isNaN(convertToNumber)) {
+    const result = `${convertToNumber + 25}`;
+    return result;
+  } else {
+    return `The value is not a number`;
+  }
+}
+
+console.log(convertStringToNumber("20"));
