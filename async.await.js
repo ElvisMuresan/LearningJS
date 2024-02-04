@@ -53,3 +53,34 @@ async function asyncCall() {
 }
 
 asyncCall();
+
+//ex5
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function firstOne() {
+  await delay(3000);
+  console.log("First one executed");
+}
+async function secondOne() {
+  await delay(3000);
+  console.log("Second one executed");
+}
+async function thirdOne() {
+  await delay(3000);
+  console.log("THird one executed");
+}
+
+async function asyncExecuteAll() {
+  try {
+    await firstOne();
+    await secondOne();
+    await thirdOne();
+    console.log("All functions are executed");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+asyncExecuteAll();
